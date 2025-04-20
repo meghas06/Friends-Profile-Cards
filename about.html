@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Friends Group Info</title>
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif; background-color: #f0f0f0;">
+
+  <!-- Top Section -->
+  <div style="background-color: #2c3e50; color: white; padding: 20px; text-align: center;">
+    <h1>Our College Friends Group</h1>
+    <p>A group bonded by memories, friendship, and unforgettable college moments!</p>
+    <img src="C:\Users\Admin\OneDrive\Desktop\WEBBB\projects\profile BB\images\IMG_2026.JPG" alt="Group Photo" style="max-width: 90%; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); margin-top: 20px;">
+  </div>
+
+  <!-- Main Section -->
+  <div style="display: flex;">
+
+    <!-- Sidebar -->
+    <div style="width: 220px; background-color: #ecf0f1; padding: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.1); min-height: 100vh;">
+      <h3 style="color: #2c3e50;">Friends</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin: 10px 0;"><a href="#" onclick="event.preventDefault(); showFriend(4)" style="text-decoration: none; color: #2980b9;">Harshada Varule</a></li>
+        <li style="margin: 10px 0;"><a href="#" onclick="event.preventDefault();showFriend(1)" style="text-decoration: none; color: #2980b9;">Paras Patil</a></li>
+        <li style="margin: 10px 0;"><a href="#" onclick="event.preventDefault(); showFriend(2)" style="text-decoration: none; color: #2980b9;">Diksha Chaudhari</a></li>
+        <li style="margin: 10px 0;"><a href="#" onclick="event.preventDefault(); showFriend(5)" style="text-decoration: none; color: #2980b9;">Yash Narkhede</a></li>
+        <li style="margin: 10px 0;"><a href="#" onclick="event.preventDefault(); showFriend(7)" style="text-decoration: none; color: #2980b9;">Lokesh Chaudhari</a></li>
+        <li style="margin: 10px 0;"><a href="#" onclick="event.preventDefault(); showFriend(0)" style="text-decoration: none; color: #2980b9;">Komal Patil</a></li>
+        <li style="margin: 10px 0;"><a href="#" onclick="event.preventDefault(); showFriend(0)" style="text-decoration: none; color: #2980b9;">Atharv Lasurkar</a></li>
+        <li style="margin: 10px 0;"><a href="#" onclick="event.preventDefault(); showFriend(8)" style="text-decoration: none; color: #2980b9;">Megha Sonawane</a></li>
+        <li style="margin: 10px 0;"><a href="#" onclick="event.preventDefault(); showFriend(3)" style="text-decoration: none; color: #2980b9;">Mohish Narkhede</a></li>
+        
+      </ul>
+    </div>
+
+    <!-- Friend Info Slider -->
+    <div style="flex: 1; padding: 30px;">
+      <div id="friend-info" style="background-color: white; padding: 25px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); transition: all 0.5s;">
+        <!-- Content inserted by JS -->
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div style="text-align: center; margin-top: 20px;">
+        <button onclick="prevFriend()" style="padding: 10px 20px; margin: 5px; background-color: #34495e; color: white; border: none; border-radius: 8px;">Previous</button>
+        <button onclick="nextFriend()" style="padding: 10px 20px; margin: 5px; background-color: #3498db; color: white; border: none; border-radius: 8px;">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const friends = [
+      {
+        name: "Atharv Prakash Lasurkar",
+        nickname:"uu",
+        relationship: "College friend, Classmate",
+        contact: "9284851477<br>atharvlasurkar29@gmail.com",
+        memory: "College event and time spent together",
+        interests: "Singing, Playing online games",
+        quote: "Silence is a source of great strength",
+        dob: "29th July 2005"
+      },
+      {
+        name: "Paras Samadhan Patil",
+        nickname:"Paryya",
+        relationship: "College friend, Classmate",
+        contact: "+91 9834138883<br>parasspatil137@gmail.com",
+        memory: "Any college event and the time we all spent together",
+        interests: "Playing online games, Travel",
+        quote: "Make it happen. Shock everyone.",
+        dob: "13th July 2005"
+      },
+      {
+        name: "Diksha Deepak Chaudhari",
+        nickname:"Dikshiii",
+        relationship: "College friend",
+        contact: "8080983072<br>dikshachaudhari968@gmail.com",
+        memory: "College event and time we all spent together",
+        interests: "Playing games",
+        quote: "Be the reason someone believes in good people.",
+        dob: "23rd February 2005"
+      },
+      {
+        name: "Mohish Rajendra Narkhede",
+        nickname:"Sweety",
+        relationship: "College friend, Classmate",
+        contact: "+91 7768868525<br>mohishnarkhede@gmail.com",
+        memory: "Any college event and the time we all spent together",
+        interests: "Playing online games, Travel",
+        quote: "Just Live the Life the Way You Want",
+        dob: "10th April 2006"
+      },
+      {
+        name: "Harshada Gulab Varule",
+        nickname:"Bhurii",
+        relationship: "College friend, Classmate",
+        contact: "+91 9022404789",
+        memory: "College event and the time we all spent together",
+        interests: "Travel & On field games",
+        quote: "Enjoy the time until the very End",
+        dob: "26th October 2005"
+      },
+      {
+        name: "Yash Sunil Narkhede",
+        nickname:"Yesu / Yashyaa",
+        relationship: "College friend, Classmate",
+        contact: "+91 9834487124<br> narkhedeyash47@gmail.com",
+        memory: "College event and the time we all spent together",
+        interests: "Travel & On field games",
+        quote: "I don't follow others. I walk my own path.",
+        dob: "15th september 2003"
+      },
+      {
+        name: "Komal Sunil Patil",
+        nickname:"Kombdii",
+        relationship: "College friend, Classmate",
+        contact: "+91 9834487124<br> narkhedeyash47@gmail.com",
+        memory: "College event and the time we all spent together",
+        interests: "Travel & On field games",
+        quote: "Grow through what you go through.",
+        dob: "22nd January 2005"
+      },
+      {
+        name: "Lokesh Rajendra Chaudhari",
+        nickname:"Sakhii Saheli / Lokya",
+        relationship: "College friend, Classmate",
+        contact: "+91 7972945798<br> narkhedeyash47@gmail.com",
+        memory: "College event and the time we all spent together",
+        interests: "Travel & On field games",
+        quote: "Success is 99% caffeine and 1% talent.",
+        dob: "9th January 2005"
+      },
+      {
+        name: "Megha Pravin Sonawane",
+        nickname: "Maggie",
+        relationship: "College friend, Classmate",
+        contact: "+91 7028474089<br>meghasonawane657@gmail.com",
+        memory: "When we first time met on Engineering day",
+        interests: "Travel & On field games",
+        quote: "I’m not special, I’m just a limited edition.",
+        dob: "14th February 2006"
+      }
+    ];
+
+    let index = 0;
+
+    function showFriend(i) {
+      index = i;
+      const f = friends[i];
+      document.getElementById("friend-info").innerHTML = `
+        <h2 style="color: #2c3e50;">${f.name}</h2>
+        <h3 style="color: #2980b9;">Nickname: ${f.nickname}</h3>
+        <p><strong>Relationship:</strong> ${f.relationship}</p>
+        <p><strong>Contact:</strong> ${f.contact}</p>
+        <p><strong>Special Memory:</strong> ${f.memory}</p>
+        <p><strong>Interests:</strong> ${f.interests}</p>
+        <p><strong>Favorite Quote:</strong> "${f.quote}"</p>
+        <p><strong>Date of Birth:</strong> ${f.dob}</p>
+      `;
+    }
+
+    function nextFriend() {
+      index = (index + 1) % friends.length;
+      showFriend(index);
+    }
+
+    function prevFriend() {
+      index = (index - 1 + friends.length) % friends.length;
+      showFriend(index);
+    }
+
+    // Load the first friend on page load
+    showFriend(index);
+  </script>
+</body>
+</html>
